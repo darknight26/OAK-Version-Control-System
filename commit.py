@@ -30,7 +30,7 @@ class Commit(staticmethod):
         commit_cont += "\n" + Commit.get_tree_hash(Tree.create_tree(main_dir,main_dir))
         commit_cont += "\n" + Commit.get_parent_hash(Tree.create_tree(main_dir,main_dir))
         commit_cont += "\n" + Commit.get_curr_timestamp() + Commit.get_date(main_dir,main_dir)
-        commit_cont += "\n" + Commit.get_comment(main_dir,main_dir)
+        commit_cont += "\n" + comment
 
         hash_str = hashlib.sha1(commit_cont.encode('utf-8'))
         hash_str = hash_str.hexdigest()
